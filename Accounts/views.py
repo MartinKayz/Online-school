@@ -15,3 +15,11 @@ def register(request):
         print(form.cleaned_data)
         form.save()
     return render(request, "Accounts/register.html", context)
+
+
+def loginPage(request):
+    form = LoginForm(request.POST or None)
+    context = {
+        'form':form
+    }
+    return render(request,'Accounts/loginpage.html',context)
