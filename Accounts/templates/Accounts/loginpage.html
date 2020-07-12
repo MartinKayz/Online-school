@@ -19,7 +19,7 @@ Login Page
                             {% csrf_token %}
                             {{ form.as_p }}
                             <input type="submit" class="btn_1" value="Login">
-                        <a href="#" class="btn_2">Register </a>
+                        <a href="{% url 'register' %}" class="btn_2">Register </a>
                         </form>
                     </div>
                 </div>
