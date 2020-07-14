@@ -9,34 +9,42 @@ User = get_user_model()
 
 
 def register(request):
-    form = RegisterForm(request.POST or None)
-    context = {
-        'form': form,
-    }
-    if form.is_valid():
-        print(form.cleaned_data)
-        form.save()
-        return redirect('mainsite:index')
+    if request.user.is_authenticated:
+        return redirect("mainsite:index")
+    else:
+        form = RegisterForm(request.POST or None)
+        if form.is_valid():
+            print(form.cleaned_data)
+            form.save()
+            return redirect('mainsite:index')
+        context = {
+            'form': form,
+        }
 
     return render(request, "Accounts/register.html", context)
 
 
 def loginPage(request):
-    form = LoginForm(request.POST or None)
-    context = {
-        'form': form
-    }
-    if form.is_valid():
-        email = form.cleaned_data['email']
-        password = form.cleaned_data['password']
-        user = authenticate(request, email=email, password=password)
-        if user is not None:
-            login(request, user)
-            messages.error(
-                request, "Sorry we couldn't Login you in, Check your Username and Password")
-            return redirect('mainsite:index')
-        else:
-            messages.info(request, "Username Or Password is Inncorrect ")
+    if request.user.is_authenticated:
+        return redirect("mainsite:index")
+    else:
+
+        form = LoginForm(request.POST or None)
+        if form.is_valid():
+            email = form.cleaned_data['email']
+            password = form.cleaned_data['password']
+            user = authenticate(request, email=email, password=password)
+            if user is not None:
+                login(request, user)
+                messages.error(
+                    request, "Sorry we couldn't Login you in, Check your Username and Password")
+                return redirect('mainsite:index')
+            else:
+                messages.info(request, "Username Or Password is Inncorrect ")
+
+        context = {
+            'form': form
+        }
     return render(request, 'Accounts/loginpage.html', context)
 
 

@@ -1,7 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from .models import *
 from django.contrib import messages
-
+from django.contrib.auth.decorators import login_required
 
 def index(request):
     courses = Course.objects.all().order_by('-id')[:3]
@@ -32,7 +32,7 @@ def contact(request):
     context = {}
     return render(request, 'mainsite/contact.html', context)
 
-
+@login_required(login_url='/login/')
 def blogsingle(request, blog_id):
     blogs = Blog.objects.all().order_by('-date_created')[:7]
     blog = Blog.objects.get(pk=blog_id)
@@ -47,20 +47,20 @@ def blogsingle(request, blog_id):
     context = {'blog': blog, 'comments': comments, 'blogs': blogs}
     return render(request, 'mainsite/blogpost.html', context)
 
-
+@login_required(login_url='/login/')
 def blog(request):
     courses = Course.objects.all().order_by('-id')[:3]
     blogs = Blog.objects.all().order_by('-id')[:10]
     context = {'blogs': blogs, 'courses': courses}
     return render(request, 'mainsite/blog.html', context)
 
-
+@login_required(login_url='/login/')
 def courses(request):
     courses = Course.objects.all().order_by('tag')
     context = {'courses': courses}
     return render(request, 'mainsite/courses.html', context)
 
-
+@login_required(login_url='/login/')
 def courseDetails(request, course_id):
     course = Course.objects.get(pk=course_id)
     lesson = lessons.objects.filter(course=course).order_by('postion')
@@ -73,7 +73,7 @@ def courseDetails(request, course_id):
     context = {'course': course, 'lesson': lesson, 'reviews': reviews}
     return render(request, 'mainsite/courseDetails.html', context)
 
-
+@login_required(login_url='/login/')
 def courseLesson(request, lesson_id):
     lesson = lessons.objects.get(pk=lesson_id)
     reviews = lessonfeedback.objects.filter(lesson=lesson).order_by('-id')
