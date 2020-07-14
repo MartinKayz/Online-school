@@ -68,8 +68,6 @@ def courseDetails(request, course_id):
     if request.method == 'POST':
         name = request.user.username
         comment = request.POST['feedback']
-        print(name)
-        print(comment)
         coursefeedback.objects.create(
             course=course, name=name, comment=comment)
     context = {'course': course, 'lesson': lesson, 'reviews': reviews}
@@ -78,5 +76,12 @@ def courseDetails(request, course_id):
 
 def courseLesson(request, lesson_id):
     lesson = lessons.objects.get(pk=lesson_id)
-    context = {'lesson': lesson}
+    reviews = lessonfeedback.objects.filter(lesson=lesson).order_by('-id')
+    if request.method == 'POST':
+        name = request.user.username
+        comment = request.POST['feedback']
+        lessonfeedback.objects.create(
+            lesson=lesson, name=name, comment=comment)
+
+    context = {'lesson': lesson,'reviews':reviews}
     return render(request, 'mainsite/lesson.html', context)

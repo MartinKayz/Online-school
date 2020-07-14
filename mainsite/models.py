@@ -82,3 +82,10 @@ class coursefeedback(models.Model):
         return self.name
     
     
+class lessonfeedback(models.Model):
+    lesson = models.ForeignKey(lessons, on_delete=models.CASCADE)
+    name = models.CharField(max_length=350)
+    comment = models.TextField()
+
+    def __str__(self):
+        return self.name
