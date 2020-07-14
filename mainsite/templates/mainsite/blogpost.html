@@ -93,17 +93,6 @@ Blog post
                               placeholder="Write Comment"></textarea>
                         </div>
                      </div>
-                     <div class="col-sm-6">
-                        <div class="form-group">
-                           <input class="form-control" name="name" id="name" type="text" placeholder="Name">
-                        </div>
-                     </div>
-                     <div class="col-sm-6">
-                        <div class="form-group">
-                           <input class="form-control" name="email" id="email" type="email" placeholder="Email">
-                        </div>
-                     </div>
-
                   </div>
                   <div class="form-group">
                      <button type="submit" class="button btn_1 button-contactForm">Send Message</button>
@@ -113,25 +102,25 @@ Blog post
          </div>
          <div class="col-lg-4">
             <div class="blog_right_sidebar">
-               <aside class="single_sidebar_widget search_widget">
-                  <form action="#">
-                     <div class="form-group">
-                        <div class="input-group mb-3">
-                           <input type="text" class="form-control" placeholder='Search Keyword'
-                              onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search Keyword'">
-                           <div class="input-group-append">
-                              <button class="btn" type="button"><i class="ti-search"></i></button>
-                           </div>
-                        </div>
-                     </div>
-                     <button class="button rounded-0 primary-bg text-white w-100 btn_1" type="submit">Search</button>
-                  </form>
-               </aside>
+
                <aside class="single_sidebar_widget post_category_widget">
                   <h4 class="widget_title">Category</h4>
                   <ul class="list cat-list">
                      <li>
-                        <a href="#" class="d-flex">
+                        <a href="#" class="d-flex"><aside class="single_sidebar_widget search_widget">
+                           <form action="#">
+                              <div class="form-group">
+                                 <div class="input-group mb-3">
+                                    <input type="text" class="form-control" placeholder='Search Keyword'
+                                       onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search Keyword'">
+                                    <div class="input-group-append">
+                                       <button class="btn" type="button"><i class="ti-search"></i></button>
+                                    </div>
+                                 </div>
+                              </div>
+                              <button class="button rounded-0 primary-bg text-white w-100 btn_1" type="submit">Search</button>
+                           </form>
+                        </aside>
                            <p>{{blog.tag}}</p>
                         </a>
                      </li>
@@ -157,11 +146,9 @@ Blog post
                <aside class="single_sidebar_widget instagram_feeds">
                   <h4 class="widget_title">Twitter Feeds</h4>
                   <ul class="instagram_row flex-wrap">
-                     <li>
-                        <a href="#">
-                           <img class="img-fluid" src="img/post/post_5.png" alt="">
-                        </a>
-                     </li>
+                     <a class="twitter-timeline" data-width="360" data-height="500" data-theme="light"
+                        href="https://twitter.com/ClubAptech?ref_src=twsrc%5Etfw">Tweets by ClubAptech</a>
+                     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                   </ul>
                </aside>
             </div>

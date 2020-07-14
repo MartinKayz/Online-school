@@ -38,10 +38,9 @@ def blogsingle(request, blog_id):
     blog = Blog.objects.get(pk=blog_id)
     comments = BlogComments.objects.filter(post=blog).order_by('-id')
     if request.method == 'POST':
-        name = request.POST['name']
-        email = request.POST['email']
+        name = request.user.username
+        email = request.user.email
         comment = request.POST['comment']
-
         BlogComments.objects.create(
             post=blog, name=name, email=email, comment=comment)
 
@@ -52,7 +51,7 @@ def blogsingle(request, blog_id):
 def blog(request):
     courses = Course.objects.all().order_by('-id')[:3]
     blogs = Blog.objects.all().order_by('-id')[:10]
-    context = {'blogs': blogs,'courses':courses}
+    context = {'blogs': blogs, 'courses': courses}
     return render(request, 'mainsite/blog.html', context)
 
 
@@ -71,5 +70,5 @@ def courseDetails(request, course_id):
 
 def courseLesson(request, lesson_id):
     lesson = lessons.objects.get(pk=lesson_id)
-    context = {'lesson':lesson}
+    context = {'lesson': lesson}
     return render(request, 'mainsite/lesson.html', context)

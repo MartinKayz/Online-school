@@ -1,14 +1,11 @@
-<!DOCTYPE html>
-{% load static %}
+<!DOCTYPE html> {% load static %}
 <html lang="en">
 
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>{% block titlename %}
-
-        {% endblock titlename %}</title>
+    <title>{% block titlename %} {% endblock titlename %}</title>
     <!-- <link rel="icon" href="img/favicon.png"> -->
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
@@ -35,16 +32,12 @@
             <div class="row align-items-center">
                 <div class="col-lg-12">
                     <nav class="navbar navbar-expand-lg navbar-light">
-                        <a class="navbar-brand" href="{% url "mainsite:index" %}"> <img
-                                src="{% static 'img/logo.png' %}" height="90px" width="200px" alt="logo"> </a>
-                        <button class="navbar-toggler" type="button" data-toggle="collapse"
-                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
+                        <a class="navbar-brand" href="{% url 'mainsite:index' %}"> <img src="{% static 'img/logo.png' %}" height="90px" width="200px" alt="logo"> </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
 
-                        <div class="collapse navbar-collapse main-menu-item justify-content-end"
-                            id="navbarSupportedContent">
+                        <div class="collapse navbar-collapse main-menu-item justify-content-end" id="navbarSupportedContent">
                             <ul class="navbar-nav align-items-center">
                                 <li class="nav-item">
                                     <a class="nav-link" href="{% url 'mainsite:index' %}">Home</a>
@@ -55,6 +48,9 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="{% url 'mainsite:courses' %}">Courses</a>
                                 </li>
+                                <!-- <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'mainsite:courses' %}">Become a Tutor </a>
+                                </li> -->
 
                                 <li class="nav-item">
                                     <a class="nav-link" href="{% url 'mainsite:blog' %}">Blog</a>
@@ -83,9 +79,7 @@
     </header>
     <!-- Header part end-->
 
-    {% block main-content %}
-
-    {% endblock main-content %}
+    {% block main-content %} {% endblock main-content %}
 
     <!-- footer part start-->
     <footer class="footer-area">
@@ -93,26 +87,21 @@
             <div class="row justify-content-between">
                 <div class="col-sm-6 col-md-4 col-xl-3">
                     <div class="single-footer-widget footer_1">
-                        <a href="{% url 'mainsite:index' %}"> <img src="{% static 'img/logo.png' %}" height="90px"
-                                width="200px" alt=""> </a>
-                        <p>The institute provides a wide variety of career, professional, short term and certification
-                            courses, designed by our expert academicians after careful market study and research. </p>
+                        <a href="{% url 'mainsite:index' %}"> <img src="{% static 'img/logo.png' %}" height="90px" width="200px" alt=""> </a>
+                        <p>The institute provides a wide variety of career, professional, short term and certification courses, designed by our expert academicians after careful market study and research. </p>
 
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-4 col-xl-4">
                     <div class="single-footer-widget footer_2">
                         <h4>Newsletter</h4>
-                        <p>Stay updated with our latest trends and new courses and lessons from professional Teachers
-                            Around the World
+                        <p>Stay updated with our latest trends and new courses and lessons from professional Teachers Around the World
                         </p>
                         <form action="" method="POST">
                             {% csrf_token %}
                             <div class="form-group">
                                 <div class="input-group mb-3">
-                                    <input type="text" class="form-control" placeholder='Enter email address'
-                                        onfocus="this.placeholder = ''"
-                                        onblur="this.placeholder = 'Enter email address'">
+                                    <input type="text" class="form-control" placeholder='Enter email address' onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'">
                                     <div class="input-group-append">
                                         <button class="btn btn_1" type="button"><i class="ti-angle-right"></i></button>
                                     </div>
@@ -150,7 +139,9 @@
                             <div class="col-lg-12">
                                 <p class="footer-text m-0">
                                     Copyright &copy;
-                                    <script>document.write(new Date().getFullYear());</script>
+                                    <script>
+                                        document.write(new Date().getFullYear());
+                                    </script>
                                 </p>
                             </div>
                         </div>
