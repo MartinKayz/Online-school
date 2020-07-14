@@ -64,7 +64,15 @@ def courses(request):
 def courseDetails(request, course_id):
     course = Course.objects.get(pk=course_id)
     lesson = lessons.objects.filter(course=course).order_by('postion')
-    context = {'course': course, 'lesson': lesson}
+    reviews = coursefeedback.objects.filter(course=course).order_by('-id')
+    if request.method == 'POST':
+        name = request.user.username
+        comment = request.POST['feedback']
+        print(name)
+        print(comment)
+        coursefeedback.objects.create(
+            course=course, name=name, comment=comment)
+    context = {'course': course, 'lesson': lesson, 'reviews': reviews}
     return render(request, 'mainsite/courseDetails.html', context)
 
 

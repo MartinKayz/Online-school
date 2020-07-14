@@ -76,7 +76,6 @@ class lessons(models.Model):
 class coursefeedback(models.Model):
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
     name = models.CharField(max_length=350)
-    profilepic = models.ImageField()
     comment = models.TextField()
 
     def __str__(self):

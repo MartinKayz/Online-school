@@ -48,10 +48,11 @@ Course Details
                             {%  for topic in lesson %}
                             <li class="justify-content-between align-items-center d-flex">
                                 <p>{{topic.title}}</p>
-                                <a class="btn_2 text-uppercase" href="{% url 'mainsite:Course_lessons' topic.id %}">View Details</a>
+                                <a class="btn_2 text-uppercase" href="{% url 'mainsite:Course_lessons' topic.id %}">View
+                                    Details</a>
                             </li>
                             {% endfor %}
-                            
+
                         </ul>
                     </div>
                 </div>
@@ -94,84 +95,34 @@ Course Details
                 <div class="content">
                     <div class="feedeback">
                         <h6>Your Feedback</h6>
-                        <textarea name="feedback" class="form-control" cols="10" rows="10"></textarea>
-                        <div class="mt-10 text-right">
-                            <a href="#" class="btn_1">Read more</a>
-                        </div>
+                        <form action="" method="POST">
+                            {% csrf_token %}
+                            <textarea name="feedback" class="form-control" cols="10" rows="10"></textarea>
+                            <div class="mt-10 text-right">
+                                <input type="submit" class="btn_1" value="Send">
+                            </div>
+                        </form>
                     </div>
+                   
                     <div class="comments-area mb-30">
+                        {% for review in reviews %}
                         <div class="comment-list">
                             <div class="single-comment single-reviews justify-content-between d-flex">
                                 <div class="user justify-content-between d-flex">
                                     <div class="thumb">
-                                        <img src="img/cource/cource_1.png" alt="">
                                     </div>
                                     <div class="desc">
-                                        <h5><a href="#">Emilly Blunt</a>
+                                        <h5><a href="#">{{review.name}}</a>
                                         </h5>
-                                        <div class="rating">
-                                            <a href="#"><img src="img/icon/color_star.svg" alt=""></a>
-                                            <a href="#"><img src="img/icon/color_star.svg" alt=""></a>
-                                            <a href="#"><img src="img/icon/color_star.svg" alt=""></a>
-                                            <a href="#"><img src="img/icon/color_star.svg" alt=""></a>
-                                            <a href="#"><img src="img/icon/star.svg" alt=""></a>
-                                        </div>
+                                      
                                         <p class="comment">
-                                            Blessed made of meat doesn't lights doesn't was dominion and sea earth
-                                            form
+                                            {{review.comment}}
                                         </p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="comment-list">
-                            <div class="single-comment single-reviews justify-content-between d-flex">
-                                <div class="user justify-content-between d-flex">
-                                    <div class="thumb">
-                                        <img src="img/cource/cource_2.png" alt="">
-                                    </div>
-                                    <div class="desc">
-                                        <h5><a href="#">Elsie Cunningham</a>
-                                        </h5>
-                                        <div class="rating">
-                                            <a href="#"><img src="img/icon/color_star.svg" alt=""></a>
-                                            <a href="#"><img src="img/icon/color_star.svg" alt=""></a>
-                                            <a href="#"><img src="img/icon/color_star.svg" alt=""></a>
-                                            <a href="#"><img src="img/icon/color_star.svg" alt=""></a>
-                                            <a href="#"><img src="img/icon/star.svg" alt=""></a>
-                                        </div>
-                                        <p class="comment">
-                                            Blessed made of meat doesn't lights doesn't was dominion and sea earth
-                                            form
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="comment-list">
-                            <div class="single-comment single-reviews justify-content-between d-flex">
-                                <div class="user justify-content-between d-flex">
-                                    <div class="thumb">
-                                        <img src="img/cource/cource_3.png" alt="">
-                                    </div>
-                                    <div class="desc">
-                                        <h5><a href="#">Maria Luna</a>
-                                        </h5>
-                                        <div class="rating">
-                                            <a href="#"><img src="img/icon/color_star.svg" alt=""></a>
-                                            <a href="#"><img src="img/icon/color_star.svg" alt=""></a>
-                                            <a href="#"><img src="img/icon/color_star.svg" alt=""></a>
-                                            <a href="#"><img src="img/icon/color_star.svg" alt=""></a>
-                                            <a href="#"><img src="img/icon/star.svg" alt=""></a>
-                                        </div>
-                                        <p class="comment">
-                                            Blessed made of meat doesn't lights doesn't was dominion and sea earth
-                                            form
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
