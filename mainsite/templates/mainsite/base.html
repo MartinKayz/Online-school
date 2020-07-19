@@ -32,12 +32,16 @@
             <div class="row align-items-center">
                 <div class="col-lg-12">
                     <nav class="navbar navbar-expand-lg navbar-light">
-                        <a class="navbar-brand" href="{% url 'mainsite:index' %}"> <img src="{% static 'img/logo.png' %}" height="90px" width="200px" alt="logo"> </a>
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <a class="navbar-brand" href="{% url 'mainsite:index' %}"> <img
+                                src="{% static 'img/logo.png' %}" height="90px" width="200px" alt="logo"> </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
 
-                        <div class="collapse navbar-collapse main-menu-item justify-content-end" id="navbarSupportedContent">
+                        <div class="collapse navbar-collapse main-menu-item justify-content-end"
+                            id="navbarSupportedContent">
                             <ul class="navbar-nav align-items-center">
                                 <li class="nav-item">
                                     <a class="nav-link" href="{% url 'mainsite:index' %}">Home</a>
@@ -59,8 +63,15 @@
                                     <a class="nav-link" href="{% url 'mainsite:contact_us' %}">Contact</a>
                                 </li>
                                 {% if request.user.is_active %}
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+                                        role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Profile
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="#">Profle</a>
+                                        <a class="dropdown-item" href="{% url 'logout' %}">logout</a>
+                                    </div>
                                 </li>
                                 <li class="d-none d-lg-block">
                                     <a class="btn_1" href="#">Hello, {{request.user.username}}</a>
@@ -87,21 +98,26 @@
             <div class="row justify-content-between">
                 <div class="col-sm-6 col-md-4 col-xl-3">
                     <div class="single-footer-widget footer_1">
-                        <a href="{% url 'mainsite:index' %}"> <img src="{% static 'img/logo.png' %}" height="90px" width="200px" alt=""> </a>
-                        <p>The institute provides a wide variety of career, professional, short term and certification courses, designed by our expert academicians after careful market study and research. </p>
+                        <a href="{% url 'mainsite:index' %}"> <img src="{% static 'img/logo.png' %}" height="90px"
+                                width="200px" alt=""> </a>
+                        <p>The institute provides a wide variety of career, professional, short term and certification
+                            courses, designed by our expert academicians after careful market study and research. </p>
 
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-4 col-xl-4">
                     <div class="single-footer-widget footer_2">
                         <h4>Newsletter</h4>
-                        <p>Stay updated with our latest trends and new courses and lessons from professional Teachers Around the World
+                        <p>Stay updated with our latest trends and new courses and lessons from professional Teachers
+                            Around the World
                         </p>
                         <form action="" method="POST">
                             {% csrf_token %}
                             <div class="form-group">
                                 <div class="input-group mb-3">
-                                    <input type="text" class="form-control" placeholder='Enter email address' onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'">
+                                    <input type="text" class="form-control" placeholder='Enter email address'
+                                        onfocus="this.placeholder = ''"
+                                        onblur="this.placeholder = 'Enter email address'">
                                     <div class="input-group-append">
                                         <button class="btn btn_1" type="button"><i class="ti-angle-right"></i></button>
                                     </div>
