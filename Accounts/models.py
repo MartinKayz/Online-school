@@ -21,20 +21,20 @@ class UserManager(BaseUserManager):
             username=username,
         )
         user_obj.set_password(password)
-        #user_obj.staff = is_staff
-        user_obj.admin = is_admin
+        user_obj.is_staff = is_staff
+        user_obj.is_admin = is_admin
         user_obj.is_active = is_active
         user_obj.save(using=self._db)
         return user_obj
 
-    def create_staffuser(self, email, username, password=None):
-        user = self.create_user(
-            email,
-            username,
-            password=password,
-            is_staff=True
-        )
-        return user
+    # def create_staffuser(self, email, username, password=None):
+    #     user = self.create_user(
+    #         email,
+    #         username,
+    #         password=password,
+    #         is_staff=True
+    #     )
+    #     return user
 
     def create_superuser(self, email, username, password=None):
         user = self.create_user(
@@ -51,8 +51,8 @@ class User(AbstractBaseUser):
     username = models.CharField(max_length=150, blank=True, null=True)
     email = models.EmailField(max_length=254, unique=True)
     is_active = models.BooleanField(default=True)  # can login
-    staff = models.BooleanField(default=False)  # staff but non superuser
-    admin = models.BooleanField(default=False)  # sueruser
+    is_staff = models.BooleanField(default=False)  # staff but non superuser
+    is_admin = models.BooleanField(default=False)  # sueruser
     timestamp = models.DateTimeField(auto_now_add=True)
 
     USERNAME_FIELD = 'email'
@@ -76,13 +76,13 @@ class User(AbstractBaseUser):
     def has_module_perms(self,app_label):
         return True
 
-    @property
-    def is_staff(self):
-        return self.is_staff
+    # @property
+    # def is_staff(self):
+    #     return self.is_staff
 
-    @property
-    def is_admin(self):
-        return self.is_admin
+    # @property
+    # def is_admin(self):
+    #     return self.is_admin
 
     # @property
     # def is_active(self):

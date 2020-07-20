@@ -11,12 +11,12 @@ class UserAdmin(admin.ModelAdmin):
 
     form = UserAdminChangeForm  # update View
     add_form = RegisterForm  # create view
-    list_display = ['email', 'admin']
-    list_filter = ('admin', 'staff', 'is_active')
+    list_display = ['email', 'is_admin']
+    list_filter = ('is_admin', 'is_staff', 'is_active')
     fieldsets = (
         (None, {'fields': ('email', 'password')}),
         ("UserName ", {"fields": ('username',)}),
-        ("Permissions", {"fields": ('admin', 'staff',)}),
+        ("Permissions", {"fields": ('is_admin', 'is_staff',)}),
     )
     add_fieldsets = (
         (
