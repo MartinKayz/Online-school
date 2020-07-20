@@ -69,7 +69,7 @@
                                         Profile
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="#">Profle</a>
+                                        <a class="dropdown-item" href="{% url 'mainsite:profile' request.user.username %}">Profile</a>
                                         <a class="dropdown-item" href="{% url 'logout' %}">logout</a>
                                     </div>
                                 </li>
