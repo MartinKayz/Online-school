@@ -12,7 +12,7 @@ class UserAdmin(admin.ModelAdmin):
     form = UserAdminChangeForm  # update View
     add_form = RegisterForm  # create view
     list_display = ['email', 'admin']
-    list_filter = ('admin', 'staff', 'active')
+    list_filter = ('admin', 'staff', 'is_active')
     fieldsets = (
         (None, {'fields': ('email', 'password')}),
         ("UserName ", {"fields": ('username',)}),

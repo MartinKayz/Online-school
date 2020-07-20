@@ -1,0 +1,28 @@
+{% extends "mainsite/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block titlename %}
+Register
+{% endblock titlename %}
+
+{% block main-content %}
+
+<section class="banner_part">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 col-xl-6">
+                <div class="banner_text">
+                    <div class="banner_text_iner">
+                        <h5>Every child yearns to learn</h5>
+                        <h1> Sign Up Closed </h1>
+                        <p>{% trans "We are sorry, but the sign up is currently closed." %}</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- banner part start-->
+{% endblock main-content %}

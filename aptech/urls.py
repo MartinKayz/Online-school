@@ -12,6 +12,7 @@ urlpatterns = [
     path('register/', account_views.register, name='register'),
     path('login/', account_views.loginPage, name='loginpage'),
     path('logout/', account_views.logoutUser, name='logout'),
+    path('accounts/', include("allauth.urls")),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL,
