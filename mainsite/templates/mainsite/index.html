@@ -20,6 +20,13 @@ Index
                         <h5>Every child yearns to learn</h5>
                         <h1>Making Your Childs
                             World Better</h1>
+                             {% comment %} {% if messages %}
+                                <div class="inputContainer">
+                                {% for message in messages %}
+                                    <div class="alert alert-warning alert-dismissible fade show" role="alert">{{ message|safe }}</div>
+                                {% endfor %}
+                                </div>
+                            {% endif %} {% endcomment %}
                         <p>Replenish seasons may male hath fruit beast were seas saw you arrie said man beast whales
                             his void unto last session for bite. Set have great you'll male grass yielding yielding
                             man</p>
