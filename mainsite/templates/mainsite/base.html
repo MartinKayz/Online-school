@@ -70,7 +70,7 @@
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                         <a class="dropdown-item" href="{% url 'mainsite:profile' request.user.username %}">Profile</a>
-                                        <a class="dropdown-item" href="{% url 'logout' %}">logout</a>
+                                        <a class="dropdown-item" href="{% url 'account_logout' %}">logout</a>
                                     </div>
                                 </li>
                                 <li class="d-none d-lg-block">
@@ -78,7 +78,7 @@
                                 </li>
                                 {% else %}
                                 <li class="d-none d-lg-block">
-                                    <a class="btn_1" href="{% url 'loginpage' %}"> Login </a>
+                                    <a class="btn_1" href="{% url 'account_login' %}"> Login </a>
                                 </li>
                                 {% endif %}
                             </ul>
