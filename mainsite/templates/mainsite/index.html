@@ -4,7 +4,7 @@
 
 {% block titlename %}
 Index
-  
+
 {% endblock titlename %}
 {% block main-content %}
 
@@ -18,13 +18,13 @@ Index
                 <div class="banner_text">
                     <div class="banner_text_iner">
                         <h5>Every child yearns to learn</h5>
-                        <h1>Making Your Childs
+                        <h1>Making Your Child's
                             World Better</h1>
-                        <p>Replenish seasons may male hath fruit beast were seas saw you arrie said man beast whales
-                            his void unto last session for bite. Set have great you'll male grass yielding yielding
-                            man</p>
-                        <a href="#" class="btn_1">View Course </a>
-                        <a href="#" class="btn_2">Get Started </a>
+                        <p>Break the barriers today and give your child an opportunity to get access to the best
+                            <span>Educational Resources</span> at anytime and in any place.Grab a course today and let
+                            your child expand his knowledge from the best teachers around the world</p>
+                        <a href="{% url 'mainsite:courses' %}" class="btn_1">View Course </a>
+                        <a href="{% url 'loginpage' %}" class="btn_2">Get Started </a>
                     </div>
                 </div>
             </div>
@@ -40,8 +40,8 @@ Index
             <div class="col-sm-6 col-xl-3 align-self-center">
                 <div class="single_feature_text ">
                     <h2>Awesome <br> Feature</h2>
-                    <p>Set have great you male grass yielding an yielding first their you're
-                        have called the abundantly fruit were man </p>
+                    <p>We have integrated an easy to use platform that any child can be able to use to find their
+                        desired course </p>
                     <a href="#" class="btn_1">Read More</a>
                 </div>
             </div>
@@ -50,8 +50,8 @@ Index
                     <div class="single_feature_part">
                         <span class="single_feature_icon"><i class="ti-layers"></i></span>
                         <h4>Better Future</h4>
-                        <p>Set have great you male grasses yielding yielding first their to
-                            called deep abundantly Set have great you male</p>
+                        <p>Now a child/student can be able to get resources needed for his/her course without barriers
+                            of geographic location</p>
                     </div>
                 </div>
             </div>
@@ -60,8 +60,8 @@ Index
                     <div class="single_feature_part">
                         <span class="single_feature_icon"><i class="ti-new-window"></i></span>
                         <h4>Qualified Trainers</h4>
-                        <p>Set have great you male grasses yielding yielding first their to called
-                            deep abundantly Set have great you male</p>
+                        <p>We are bringing content right away from Qualified teachers from around the world right to
+                            your child's laptop</p>
                     </div>
                 </div>
             </div>
@@ -69,9 +69,9 @@ Index
                 <div class="single_feature">
                     <div class="single_feature_part single_feature_part_2">
                         <span class="single_service_icon style_icon"><i class="ti-light-bulb"></i></span>
-                        <h4>Job Oppurtunity</h4>
-                        <p>Set have great you male grasses yielding yielding first their to called deep
-                            abundantly Set have great you male</p>
+                        <h4>Creativity</h4>
+                        <p>Given the fact that students from around the world can interact, we give an opportunity for
+                            innovative ideas from the students </p>
                     </div>
                 </div>
             </div>
@@ -94,16 +94,14 @@ Index
                     <h5>About us</h5>
                     <h2>Learning with Love
                         and Laughter</h2>
-                    <p>Fifth saying upon divide divide rule for deep their female all hath brind Days and beast
-                        greater grass signs abundantly have greater also
-                        days years under brought moveth.</p>
+                    <p>Plaing course videos at your own rate and timing provides a chance for a student to carely
+                        understand the content provided and gives him/her the ability to note the smallest details
+                        provided by the tutor</p>
                     <ul>
-                        <li><span class="ti-pencil-alt"></span>Him lights given i heaven second yielding seas
-                            gathered wear</li>
-                        <li><span class="ti-ruler-pencil"></span>Fly female them whales fly them day deep given
-                            night.</li>
+                        <li><span class="ti-pencil-alt"></span>Ability to identify even the smallest details of the information</li>
+                        <li><span class="ti-ruler-pencil"></span>A student can ask questions in a group chat for help about the lessons </li>
                     </ul>
-                    <a href="#" class="btn_1">Read More</a>
+                    <a href="{% url 'mainsite:courses' %}" class="btn_1">Read More</a>
                 </div>
             </div>
         </div>
@@ -162,7 +160,7 @@ Index
                     <img src="{{course.imageUrl}}" class="special_img" alt="">
                     <div class="special_cource_text">
                         <a href="#" class="btn_4">{{course.tag}}</a>
-                        
+
                         <a href="{% url 'mainsite:CourseDetails' course.id %}">
                             <h3>{{course.title}}</h3>
                         </a>
@@ -205,22 +203,20 @@ Index
                     <h5>Advance feature</h5>
                     <h2>Our Advance Educator
                         Learning System</h2>
-                    <p>Fifth saying upon divide divide rule for deep their female all hath brind mid Days
-                        and beast greater grass signs abundantly have greater also use over face earth
-                        days years under brought moveth she star</p>
+                    <p>We have created an online store for courses and lessons that any student around the world can get access to regardless of the location or timing </p>
                     <div class="row">
                         <div class="col-sm-6 col-md-12 col-lg-6">
                             <div class="learning_member_text_iner">
                                 <span class="ti-pencil-alt"></span>
                                 <h4>Learn Anywhere</h4>
-                                <p>There earth face earth behold she star so made void two given and also our</p>
+                                <p>By just a click of a button, you can get your course's resources and thus be able to dive into your learning in any place on earth</p>
                             </div>
                         </div>
                         <div class="col-sm-6 col-md-12 col-lg-6">
                             <div class="learning_member_text_iner">
                                 <span class="ti-stamp"></span>
                                 <h4>Expert Teacher</h4>
-                                <p>There earth face earth behold she star so made void two given and also our</p>
+                                <p>All our courses are being created from a pool of expert tutors that understand the course at their maximum</p>
                             </div>
                         </div>
                     </div>
@@ -330,7 +326,7 @@ Index
                                     <img src="{% static 'img/testimonial_img_3.png' %}" alt="#">
                                 </div>
                             </div>
-                            <div class="col-xl-4 d-none d-xl-block">
+                            <div class="col-xl-4 d-none coursesd-xl-block">
                                 <div class="testimonial_slider_text">
                                     <p>Behold place was a multiply creeping creature his domin to thiren open void
                                         hath herb divided divide creepeth living shall i call beginning
@@ -378,7 +374,8 @@ Index
                             </a>
                             <p>{{blog.blog_post | truncatechars:70}}</p>
                             <ul>
-                                <li> <span class="ti-comments"></span>{{blog.blogcomments_set.all.count }} Comment{{blog.blogcomments_set.all|pluralize}}</li>
+                                <li> <span class="ti-comments"></span>{{blog.blogcomments_set.all.count }}
+                                    Comment{{blog.blogcomments_set.all|pluralize}}</li>
                                 <li> <span class="ti-heart"></span> Likes</li>
                             </ul>
                         </div>
