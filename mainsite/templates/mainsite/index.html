@@ -20,13 +20,43 @@ Index
                         <h5>Every child yearns to learn</h5>
                         <h1>Making Your Childs
                             World Better</h1>
-                             {% comment %} {% if messages %}
+                            
+                            {% if messages %}
                                 <div class="inputContainer">
+                                
                                 {% for message in messages %}
-                                    <div class="alert alert-warning alert-dismissible fade show" role="alert">{{ message|safe }}</div>
+                                
+                                    <div id="snackbar" class="show" role="alert">
+                                    
+                                    {{ message|safe }}
+                                    </div>
+                                    
+                                    <script>
+                                    function myFunction() {
+                                    // Get the snackbar DIV
+                                    var x = document.getElementById("snackbar");
+
+                                    // Add the "show" class to DIV
+                                    x.className = "show";
+                                    
+                                    // After 3 seconds, remove the show class from DIV
+                                    setTimeout(function(){ 
+                                        x.className = x.className.replace("show", "");
+                                        
+                                        }, 4000);
+                                    }
+                                    </script>
+                                    <script>
+                                    
+                                        setTimeout(function() {
+                                            jQuery("#snackbar").hide();
+                                        },2000);
+                        
+                                    </script> 
+                                    
                                 {% endfor %}
                                 </div>
-                            {% endif %} {% endcomment %}
+                            {% endif %} 
                         <p>Replenish seasons may male hath fruit beast were seas saw you arrie said man beast whales
                             his void unto last session for bite. Set have great you'll male grass yielding yielding
                             man</p>
