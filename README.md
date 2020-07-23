@@ -10,13 +10,13 @@ The project contains a requirements.txt file that contains all the details and r
 On cloning or forking the project  
 Create a virtualenv and then activate it 
 
-Run pip install requirements.txt to install all the dependencies of the project to get started  
+Run ```pip install -r requirements.txt``` to install all the dependencies of the project to get started  
 
-Run a python manage.py makemigraitions to make reflect all the model changes of the project 
+Run a ```python manage.py makemigraitions``` to make reflect all the model changes of the project 
 
-Followed by a python manage.py migrate to make changes to the database 
+Followed by a ```python manage.py migrate``` to make changes to the database 
 
-You can now run a python manage.py runserver to run a lightweight Django server and then visit http://127.0.0.1:8800/ to see the index page of the site 
+You can now run a ```python manage.py runserver``` to run a lightweight Django server and then visit http://127.0.0.1:8800/ to see the index page of the site 
 
 Please note that 
 Everything on the site can be changed to provide a better way the students will get the information 
